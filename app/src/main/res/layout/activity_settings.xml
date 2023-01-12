@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.SettingsActivity"
+    tools:context="glory.hearing.tool.activity.SettingsActivity"
     android:background="#232F34">
 
     <androidx.appcompat.widget.Toolbar
