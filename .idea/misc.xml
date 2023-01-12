@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/activity_all_file.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/activity_hearing_facts.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/activity_slpesh.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gha/Downloads/Aduio/Aduio/Audio/app/src/main/res/layout/title_layout.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
