@@ -16,4 +16,3 @@ dependencyResolutionManagement {
 rootProject.name = "Hearing Tool"
 include ':app'
 include ':unity-ads'
-include ':AdsSdk'

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import glory.hearing.tool.repository.DataStoreRepository
-import com.pesonal.adsdk.AppManage
 import glory.hearing.tool.BuildConfig
 import glory.hearing.tool.R
 import glory.hearing.tool.databinding.ActivitySettingsBinding
@@ -26,27 +25,27 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        //loadInterstitialAd
-        AppManage.getInstance(this).loadInterstitialAd(
-            this, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
-        )
-
-        //Native Ads
-        AppManage.getInstance(this).showNative(
-            findViewById<View>(R.id.native_container) as ViewGroup,
-            AppManage.ADMOB_N[0],
-            AppManage.FACEBOOK_N[0]
-        )
+//        //loadInterstitialAd
+//        AppManage.getInstance(this).loadInterstitialAd(
+//            this, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
+//        )
+//
+//        //Native Ads
+//        AppManage.getInstance(this).showNative(
+//            findViewById<View>(R.id.native_container) as ViewGroup,
+//            AppManage.ADMOB_N[0],
+//            AppManage.FACEBOOK_N[0]
+//        )
 
 
 
         binding.toolbarInclude.back.setOnClickListener {
-            AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
-                this@SettingsActivity, {
+//            AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
+//                this@SettingsActivity, {
+//                }, "", AppManage.app_mainClickCntSwAd
+//            )
                     startActivity(Intent(this@SettingsActivity, MainActivity::class.java))
                     finish()
-                }, "", AppManage.app_mainClickCntSwAd
-            )
         }
 
         dataStoreRepo = DataStoreRepository(this)
@@ -95,24 +94,24 @@ class SettingsActivity : AppCompatActivity() {
             val isRecordingOn: Boolean = dataStoreRepo.readFromDataStore.first()
             binding.isRecordingOnSwitch.isChecked = isRecordingOn
         }
-        AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
-            this@SettingsActivity, {
+//        AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
+//            this@SettingsActivity, {
+//            }, "", AppManage.app_mainClickCntSwAd
+//        )
                 binding.isRecordingOnSwitch.setOnCheckedChangeListener { _, isChecked ->
                     lifecycleScope.launch {
                         dataStoreRepo.saveToDataStore(isChecked)
                     }
                 }
-            }, "", AppManage.app_mainClickCntSwAd
-        )
 
 
     }
 
     override fun onBackPressed() {
-        AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
-            this@SettingsActivity, {
+//        AppManage.getInstance(this@SettingsActivity).showInterstitialAd(
+//            this@SettingsActivity, {
+//            }, "", AppManage.app_innerClickCntSwAd
+//        )
                 super.onBackPressed()
-            }, "", AppManage.app_innerClickCntSwAd
-        )
     }
 }

@@ -24,7 +24,6 @@ import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.google.android.play.core.tasks.Task
-import com.pesonal.adsdk.AppManage
 import glory.hearing.tool.R
 import glory.hearing.tool.databinding.ActivityMainBinding
 import glory.hearing.tool.repository.DataStoreRepository
@@ -57,19 +56,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
-        //loadInterstitialAd
-        AppManage.getInstance(this).loadInterstitialAd(
-            this,
-            AppManage.ADMOB_I[0],
-            AppManage.FACEBOOK_I[0]
-        )
-
-        //Native Ads
-        AppManage.getInstance(this).showNative(
-            findViewById<View>(R.id.native_container) as ViewGroup,
-            AppManage.ADMOB_N[0],
-            AppManage.FACEBOOK_N[0]
-        )
+//        //loadInterstitialAd
+//        AppManage.getInstance(this).loadInterstitialAd(
+//            this,
+//            AppManage.ADMOB_I[0],
+//            AppManage.FACEBOOK_I[0]
+//        )
+//
+//        //Native Ads
+//        AppManage.getInstance(this).showNative(
+//            findViewById<View>(R.id.native_container) as ViewGroup,
+//            AppManage.ADMOB_N[0],
+//            AppManage.FACEBOOK_N[0]
+//        )
 
 
 
@@ -109,31 +108,31 @@ class MainActivity : AppCompatActivity() {
                     this, Manifest.permission.RECORD_AUDIO
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
-                AppManage.getInstance(this).showInterstitialAd(
-                    this,
-                    {
-                        binding.button.setImageResource(if (!isOn) R.drawable.stop else R.drawable.start)
+//                AppManage.getInstance(this).showInterstitialAd(
+//                    this,
+//                    {
+//
+//                    },
+//                    "",
+//                    AppManage.app_mainClickCntSwAd
+//                )
 
-                        isOn = !isOn
-                        if (isOn) {
-                            if (!isMyServiceRunning(AudioService::class.java)) {
-                                ContextCompat.startForegroundService(
-                                    this@MainActivity,
-                                    serviceIntent
-                                )
-                            } else {
-                                Toast.makeText(this@MainActivity, "Running", Toast.LENGTH_SHORT)
-                                    .show()
-                            }
-                        } else {
-                            stopService(serviceIntent)
-                        }
-                    },
-                    "",
-                    AppManage.app_mainClickCntSwAd
-                )
+                binding.button.setImageResource(if (!isOn) R.drawable.stop else R.drawable.start)
 
-
+                isOn = !isOn
+                if (isOn) {
+                    if (!isMyServiceRunning(AudioService::class.java)) {
+                        ContextCompat.startForegroundService(
+                            this@MainActivity,
+                            serviceIntent
+                        )
+                    } else {
+                        Toast.makeText(this@MainActivity, "Running", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                } else {
+                    stopService(serviceIntent)
+                }
             }
         }
 
@@ -226,9 +225,9 @@ class MainActivity : AppCompatActivity() {
                 "No,Sure "
             ) { _, _ ->
 
-                AppManage.getInstance(this).showInterstitialAd(this, {
+//                AppManage.getInstance(this).showInterstitialAd(this, {
+//                }, "", AppManage.app_mainClickCntSwAd)
                     super.onBackPressed()
-                }, "", AppManage.app_mainClickCntSwAd)
 
             }
         val alertDialog = builder.create()

@@ -8,7 +8,6 @@ import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import glory.hearing.tool.adepter.ItemAdapter
 import glory.hearing.tool.model.Item
 import glory.hearing.tool.model.SliderTransformer
-import com.pesonal.adsdk.AppManage
 import glory.hearing.tool.R
 import glory.hearing.tool.databinding.ActivityHearingFactsBinding
 
@@ -22,23 +21,23 @@ class HearingFactsActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         binding.toolbarInclude.back.setOnClickListener {
-            AppManage.getInstance(this@HearingFactsActivity).showInterstitialAd(
-                this@HearingFactsActivity, {
+//            AppManage.getInstance(this@HearingFactsActivity).showInterstitialAd(
+//                this@HearingFactsActivity, {
+//                }, "", AppManage.app_mainClickCntSwAd
+//            )
                     startActivity(Intent(this@HearingFactsActivity, MainActivity::class.java))
                     finish()
-                }, "", AppManage.app_mainClickCntSwAd
-            )
         }
 
-        //loadInterstitialAd
-        AppManage.getInstance(this).loadInterstitialAd(
-            this, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
-        )
-        //banner ads
-        AppManage.getInstance(this).showNativeBanner(
-            binding.linearLayout, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
-        )
-       AppManage.getInstance(this@HearingFactsActivity).showNativeBanner(binding.linearLayout)
+//        //loadInterstitialAd
+//        AppManage.getInstance(this).loadInterstitialAd(
+//            this, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
+//        )
+//        //banner ads
+//        AppManage.getInstance(this).showNativeBanner(
+//            binding.linearLayout, AppManage.ADMOB_I[0], AppManage.FACEBOOK_I[0]
+//        )
+//       AppManage.getInstance(this@HearingFactsActivity).showNativeBanner(binding.linearLayout)
 
 
         binding.viewpager.apply {
@@ -91,11 +90,11 @@ class HearingFactsActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        AppManage.getInstance(this@HearingFactsActivity).showInterstitialAd(
-            this@HearingFactsActivity, {
+//        AppManage.getInstance(this@HearingFactsActivity).showInterstitialAd(
+//            this@HearingFactsActivity, {
+//            }, "", AppManage.app_innerClickCntSwAd
+//        )
                 super.onBackPressed()
-            }, "", AppManage.app_innerClickCntSwAd
-        )
     }
 }
 
